@@ -2,31 +2,50 @@ import React from 'react';
 import './App.css';
 import Accordion from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
+import OnOff from "./components/onOff/OnOff";
+import UnconrolledAccordion from "./components/UnconrolledAccordion/UnconrolledAccordion";
+import {UncontrolledRating} from "./components/UconrolledRating/UnconrolledRating";
 
 function App() {
+
     console.log('App rendering')
     return (
         <div>
-            <img src={`https://miro.medium.com/max/1200/1*pHsEux2h8wc3-yNCQNwz0A.jpeg`}/>
-            <PageTitle title={'This is App component'}/>
-            <PageTitle title={'My friends'}/>
-            Article 1
-            <Rating value = {3}/>
-            <Accordion title = 'Меню простое'/>
-            <Accordion title = 'Меню сложное'/>
-            Artikle 2
-            <Rating value = {0}/>
-            <Rating value = {1}/>
-            <Rating value = {2}/>
-            <Rating value = {3}/>
-            <Rating value = {4}/>
-            <Rating value = {5}/>
+            {/*<img src={`https://hub.packtpub.com/wp-content/uploads/2018/03/react-jsx.png`}/>*/}
+            {/*<PageTitle title={'This is App component'}/>*/}
+            {/*<PageTitle title={'My friends'}/>*/}
+            {/*Article 1*/}
+            {/*<Rating value= {3}/>*/}
+            <OnOff />
+            <OnOff />
+            {/*<OnOff on={false}/>*/}
+
+
+            <UnconrolledAccordion titleValue = 'Menu'/>
+            <UnconrolledAccordion titleValue = 'Users'/>
+
+            {/*<Accordion titleValue = 'Menu' collapsed = {true}/>*/}
+            {/*<Accordion titleValue = 'Users' collapsed = {false}/>*/}
+
+            <UncontrolledRating />
+
+
+            {/*<Rating value = {0}/>*/}
+            {/*<Rating value = {1}/>*/}
+            {/*<Rating value = {2}/>*/}
+            {/*<Rating value = {3}/>*/}
+            {/*<Rating value = {4}/>*/}
+            {/*<Rating value = {5}/>*/}
         </div>
 
     );
 }
 
-function PageTitle(props: any) {
+type PageTitlePropsType = {
+    title: string
+}
+
+function PageTitle(props: PageTitlePropsType) {
     console.log('PageTitle rendering')
     return <h1>{props.title}</h1>
 

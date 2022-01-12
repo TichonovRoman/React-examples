@@ -1,15 +1,28 @@
 import React from "react";
 
-function Accordion(props: any) {
-    console.log('Accordion rendering')
-    return (<>
-        <AccordionTitle title = {props.title}/>
-        <AccordionBody/>
-    </>)
-
+type AccordionPropsType = {
+    titleValue: string,
+    collapsed: boolean
 }
 
-function AccordionTitle(props:any) {
+function Accordion(props: AccordionPropsType) {
+
+    console.log('Accordion rendering')
+
+        return <div>
+            <AccordionTitle title={props.titleValue}/>
+            { !props.collapsed && <AccordionBody/>}
+            {/*{ props.collapsed===false && <AccordionBody/>} - тоже самое*/}
+            {/* т.е. если здесь тру, то идем дальше и отрисовываем тэг Аккордион*/}
+        </div>
+}
+
+
+type AccordionTitlePropsTitle = {
+    title: string
+}
+
+function AccordionTitle(props: AccordionTitlePropsTitle) {
     console.log('AccordionTitle rendered')
     return <h3>{props.title}</h3>
 
