@@ -10,16 +10,10 @@ function UnconrolledAccordion(props: AccordionPropsType) {
     console.log('Accordion rendering')
 
     let [collapsed, setCollapsed] = useState(false)
-    const valuePassing = () => {
-        if (collapsed === false) {
-            return true
-        } else {
-            return false
-        }
-    }
+
     return <div>
         <AccordionTitle title={props.titleValue}/>
-        <button onClick={() => setCollapsed(() => valuePassing())}>TOGGLE</button>
+        <button onClick={() => setCollapsed(!collapsed)}>TOGGLE</button>
         {!collapsed && <AccordionBody/>}
     </div>
 }

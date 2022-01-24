@@ -10,25 +10,27 @@ function App() {
 
     console.log('App rendering')
     return (
-        <div>
+        <div className={"App"}>
             {/*<img src={`https://hub.packtpub.com/wp-content/uploads/2018/03/react-jsx.png`}/>*/}
             {/*<PageTitle title={'This is App component'}/>*/}
             {/*<PageTitle title={'My friends'}/>*/}
             {/*Article 1*/}
             {/*<Rating value= {3}/>*/}
             <OnOff />
-            <OnOff />
+
             {/*<OnOff on={false}/>*/}
 
 
             <UnconrolledAccordion titleValue = 'Menu'/>
-            <UnconrolledAccordion titleValue = 'Users'/>
 
-            {/*<Accordion titleValue = 'Menu' collapsed = {true}/>*/}
+
+
             {/*<Accordion titleValue = 'Users' collapsed = {false}/>*/}
 
             <UncontrolledRating />
 
+            {/*<Rating value={3}/>*/}
+            {/*<Accordion titleValue = 'Menu' collapsed = {false}/>*/}
 
             {/*<Rating value = {0}/>*/}
             {/*<Rating value = {1}/>*/}
