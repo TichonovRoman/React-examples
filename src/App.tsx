@@ -1,36 +1,38 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import Accordion from "./components/Accordion/Accordion";
-import {Rating} from "./components/Rating/Rating";
+import {Rating, RatingValueType} from "./components/Rating/Rating";
 import OnOff from "./components/onOff/OnOff";
-import UnconrolledAccordion from "./components/UnconrolledAccordion/UnconrolledAccordion";
+import UncontrolledAccordion from "./components/UnconrolledAccordion/UnconrolledAccordion";
 import {UncontrolledRating} from "./components/UconrolledRating/UnconrolledRating";
+import Accordion from "./components/Accordion/Accordion";
+import UncontrolledOnOff from "./components/UncontrolledOnOff/UncontrolledOnOff";
 
 function App() {
-
     console.log('App rendering')
+
+    let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
+    let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
+    let [switchOn, setSwitchOn] = useState<boolean>(false)
+
     return (
         <div className={"App"}>
-            {/*<img src={`https://hub.packtpub.com/wp-content/uploads/2018/03/react-jsx.png`}/>*/}
-            {/*<PageTitle title={'This is App component'}/>*/}
-            {/*<PageTitle title={'My friends'}/>*/}
-            {/*Article 1*/}
-            {/*<Rating value= {3}/>*/}
-            <OnOff />
 
-            {/*<OnOff on={false}/>*/}
+                     <UncontrolledAccordion titleValue='Menu'/>
 
+            <Rating value={ratingValue} onClick = {setRatingValue}/>
+            <UncontrolledRating/>
 
-            <UnconrolledAccordion titleValue = 'Menu'/>
+            <Accordion
+                titleValue = 'Menu'
+                collapsed = {accordionCollapsed}
+                onChange = {() => setAccordionCollapsed(!accordionCollapsed)}/>
 
+            <UncontrolledOnOff onChange = {setSwitchOn}/> {switchOn.toString()}
 
-
-            {/*<Accordion titleValue = 'Users' collapsed = {false}/>*/}
-
-            <UncontrolledRating />
+            <UncontrolledAccordion titleValue={"BlaBla"}/>
 
             {/*<Rating value={3}/>*/}
-            {/*<Accordion titleValue = 'Menu' collapsed = {false}/>*/}
+
 
             {/*<Rating value = {0}/>*/}
             {/*<Rating value = {1}/>*/}

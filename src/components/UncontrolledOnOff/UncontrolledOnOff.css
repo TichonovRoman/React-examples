@@ -1,0 +1,52 @@
+.buttonBox {
+    display: grid;
+    grid-template-columns: 40px 40px 40px;
+    grid-template-areas: "a b c";
+    column-gap: 3px;
+    margin: 10px;
+}
+
+.on, .off {
+    border: black 2px solid;
+   }
+
+.on {
+    grid-area: a;
+}
+
+.off {
+    grid-area: b;
+}
+
+
+#lamp {
+    width: 20px;
+    height: 20px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    border: black 2px solid;
+    grid-area: c;
+}
+
+.lampRed {
+    width: 20px;
+    height: 20px;
+    background: red;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    border: black 2px solid;
+    grid-area: c;
+}
+
+.lampGreen {
+    width: 20px;
+    height: 20px;
+    background: green;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    border: black 2px solid;
+    grid-area: c;
+}
