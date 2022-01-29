@@ -10,7 +10,7 @@ let on = false
 
 
 
-const OnOff = (props: PropsType) => {
+export const OnOff = (props: PropsType) => {
 
 
     const onStyle = {
@@ -56,5 +56,3 @@ const OnOff = (props: PropsType) => {
         )
 
     }
-
-    export default OnOff;

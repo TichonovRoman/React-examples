@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import './App.css';
 import {Rating, RatingValueType} from "./components/Rating/Rating";
-import OnOff from "./components/onOff/OnOff";
+import {OnOff} from "./components/onOff/OnOff";
 import UncontrolledAccordion from "./components/UnconrolledAccordion/UnconrolledAccordion";
 import {UncontrolledRating} from "./components/UconrolledRating/UnconrolledRating";
-import Accordion from "./components/Accordion/Accordion";
+import {Accordion} from "./components/Accordion/Accordion";
 import UncontrolledOnOff from "./components/UncontrolledOnOff/UncontrolledOnOff";
 
 function App() {
@@ -57,3 +57,29 @@ function PageTitle(props: PageTitlePropsType) {
 
 
 export default App;
+
+
+var user = {
+    name: "Dimych",
+    age: 12,
+    address: {
+        city: {
+            title: "Minsk"
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
