@@ -3,14 +3,16 @@ import "./UncontrolledOnOff.css"
 
 type PropsType = {
     onChange: (on: boolean) => void
+    defaultOn?: boolean
 }
 
 let on = false
 
 
 
-const UncontrolledOnOff = (props: PropsType) => {
-    let [on, setOn] = useState(false)
+export const UncontrolledOnOff = (props: PropsType) => {
+    let [on, setOn] = useState(props.defaultOn ? props.defaultOn : false)
+
 
     const onStyle = {
         width: "30px",
@@ -65,5 +67,3 @@ const offClicked = () => {
         )
 
     }
-
-    export default UncontrolledOnOff;
