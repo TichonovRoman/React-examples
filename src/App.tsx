@@ -20,7 +20,7 @@ function App() {
                      <UncontrolledAccordion titleValue='Menu'/>
 
             <Rating value={ratingValue} onClick = {setRatingValue}/>
-            <UncontrolledRating/>
+            {/*<UncontrolledRating />*/}
 
             <Accordion
                 titleValue = 'Menu'
