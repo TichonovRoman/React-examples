@@ -14,20 +14,31 @@ function App() {
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
     let [switchOn, setSwitchOn] = useState<boolean>(false)
 
+    let items = [{title: 'Dimych', value: 1},
+            {title: 'Valera', value: 2},
+            {title: 'Roman', value: 3}];
+
+
+
+    const onClickCallback = (value: any) => {alert(`user with ID ${value} should be happy`)}
+
     return (
         <div className={"App"}>
 
-                     <UncontrolledAccordion titleValue='Menu'/>
+            <UncontrolledAccordion titleValue='Menu'/>
 
-            <Rating value={ratingValue} onClick = {setRatingValue}/>
+            <Rating value={ratingValue} onClick={setRatingValue}/>
             {/*<UncontrolledRating />*/}
 
             <Accordion
-                titleValue = 'Menu'
-                collapsed = {accordionCollapsed}
-                onChange = {() => setAccordionCollapsed(!accordionCollapsed)}/>
+                titleValue='Menu'
+                collapsed={accordionCollapsed}
+                onChange={() => setAccordionCollapsed(!accordionCollapsed)}
+                items={items}
+                onClick={onClickCallback}
+            />
 
-            <UncontrolledOnOff onChange = {setSwitchOn}/> {switchOn.toString()}
+            <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
 
             <UncontrolledAccordion titleValue={"BlaBla"}/>
 

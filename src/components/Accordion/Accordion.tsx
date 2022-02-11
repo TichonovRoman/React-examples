@@ -1,16 +1,17 @@
 import React from "react";
 
+type ItemType = {
+    title: string,
+    value: any
+}
+
 export type AccordionPropsType = {
     titleValue: string,
-    /**
-     * Boolean
-     */
     collapsed: boolean
     onChange: () => void
-    /**
-     * optional color of header
-     */
     color?: string
+    items: ItemType[]
+    onClick: (value: any) => void
 }
 
 export function Accordion(props: AccordionPropsType) {
@@ -19,7 +20,7 @@ export function Accordion(props: AccordionPropsType) {
 
         return <div>
             <AccordionTitle title={props.titleValue} color = {props.color} collapsed = {props.collapsed} onChange = {props.onChange}/>
-            { !props.collapsed && <AccordionBody/>}
+            { !props.collapsed && <AccordionBody items = {props.items} onClick={props.onClick}/>}
             {/*{ props.collapsed===false && <AccordionBody/>} - тоже самое*/}
             {/* т.е. если здесь тру, то идем дальше и отрисовываем тэг Аккордион*/}
         </div>
@@ -31,7 +32,6 @@ type AccordionTitlePropsTitle = {
     collapsed: boolean
     onChange: () => void
     color?: string
-
 }
 
 function AccordionTitle(props: AccordionTitlePropsTitle) {
@@ -42,12 +42,15 @@ function AccordionTitle(props: AccordionTitlePropsTitle) {
 
 }
 
-function AccordionBody() {
+export type AccordionBodyPropsType = {
+    items: ItemType[]
+    onClick: (value: any) => void
+}
+
+function AccordionBody(props: AccordionBodyPropsType) {
     console.log('AccordionBody rendered')
     return <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
+        {props.items.map((i, index) => <li onClick={()=> {props.onClick(i.value)}} key={index}>{i.title}</li>)}
     </ul>
 
 }
