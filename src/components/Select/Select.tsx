@@ -7,7 +7,7 @@ type ItemType = {
 }
 
 type SelectPropsType = {
-    // value: any
+    value: string
     onChange: (value: any)=> void
     items: ItemType[]
 }
@@ -16,7 +16,7 @@ type SelectPropsType = {
 export function Select(props: SelectPropsType) {
 
     let [state, setState] = useState(false)
-    let [city, setCity] = useState(props.items[0].title)
+    let [city, setCity] = useState(props.value)
 
     let onState = () => setState(true)
     let setCityHandler = (title: string) => {

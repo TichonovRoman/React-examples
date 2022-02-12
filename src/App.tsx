@@ -43,7 +43,7 @@ function App() {
 
             <UncontrolledAccordion titleValue={"BlaBla"}/>
             
-            <Select onChange={()=>{}} items={[
+            <Select onChange={()=>{}} value = {'Select City, pleas'} items={[
                 {title: 'Moscow', value: "1"},
                 {title: 'Kazan', value: "2"},
                 {title: 'Voronezh', value: "3"},
