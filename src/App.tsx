@@ -6,6 +6,7 @@ import UncontrolledAccordion from "./components/UnconrolledAccordion/Unconrolled
 import {UncontrolledRating} from "./components/UconrolledRating/UnconrolledRating";
 import {Accordion} from "./components/Accordion/Accordion";
 import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
+import {Select} from "./components/Select/Select";
 
 function App() {
     console.log('App rendering')
@@ -41,6 +42,14 @@ function App() {
             <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
 
             <UncontrolledAccordion titleValue={"BlaBla"}/>
+            
+            <Select onChange={()=>{}} items={[
+                {title: 'Moscow', value: "1"},
+                {title: 'Kazan', value: "2"},
+                {title: 'Voronezh', value: "3"},
+                {title: 'Saratov', value: "4"},
+
+            ]}/>
 
             {/*<Rating value={3}/>*/}
 

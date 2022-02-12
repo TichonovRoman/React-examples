@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 
 type ItemType = {
@@ -7,7 +7,7 @@ type ItemType = {
 }
 
 type SelectPropsType = {
-    value: any
+    // value: any
     onChange: (value: any)=> void
     items: ItemType[]
 }
@@ -15,10 +15,20 @@ type SelectPropsType = {
 
 export function Select(props: SelectPropsType) {
 
+    let [state, setState] = useState(false)
+    let [city, setCity] = useState(props.items[0].title)
+
+    let onState = () => setState(true)
+    let setCityHandler = (title: string) => {
+        setCity(title)
+        setState(false)
+    }
+
     return (
         <div>
-            <div>{}</div>
-            {props.items.map(i => <div>{i.title}</div>)}
+            <div onClick={onState}>{city}</div>
+
+            {state && props.items.map(i => <div onClick={()=>setCityHandler(i.title)}>{i.title}</div>)}
         </div>
     )
 
