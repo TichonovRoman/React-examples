@@ -14,7 +14,9 @@ export type AccordionPropsType = {
     onClick: (value: any) => void
 }
 
-export function Accordion(props: AccordionPropsType) {
+export const Accordion = React.memo(Accordion1)
+
+function Accordion1(props: AccordionPropsType) {
 
     console.log('Accordion rendering')
 
@@ -34,7 +36,9 @@ type AccordionTitlePropsTitle = {
     color?: string
 }
 
-function AccordionTitle(props: AccordionTitlePropsTitle) {
+const AccordionTitle = React.memo(AccordionTitle1)
+
+function AccordionTitle1(props: AccordionTitlePropsTitle) {
     console.log('AccordionTitle rendered')
     return <h3
         style = {{color: props.color ? props.color : "black"}}
@@ -47,7 +51,9 @@ export type AccordionBodyPropsType = {
     onClick: (value: any) => void
 }
 
-function AccordionBody(props: AccordionBodyPropsType) {
+const AccordionBody = React.memo(AccordionBody1)
+
+function AccordionBody1(props: AccordionBodyPropsType) {
     console.log('AccordionBody rendered')
     return <ul>
         {props.items.map((i, index) => <li onClick={()=> {props.onClick(i.value)}} key={index}>{i.title}</li>)}

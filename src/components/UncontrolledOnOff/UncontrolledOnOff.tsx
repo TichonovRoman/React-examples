@@ -8,9 +8,7 @@ type PropsType = {
 
 let on = false
 
-
-
-export const UncontrolledOnOff = (props: PropsType) => {
+const UncontrolledOnOffForMemo = (props: PropsType) => {
     let [on, setOn] = useState(props.defaultOn ? props.defaultOn : false)
 
 
@@ -67,3 +65,5 @@ const offClicked = () => {
         )
 
     }
+
+export const UncontrolledOnOff = React.memo(UncontrolledOnOffForMemo)

@@ -10,7 +10,7 @@ let on = false
 
 
 
-export const OnOff = (props: PropsType) => {
+const OnOffForMemo = (props: PropsType) => {
 
 
     const onStyle = {
@@ -56,3 +56,5 @@ export const OnOff = (props: PropsType) => {
         )
 
     }
+
+export const OnOff = React.memo(OnOffForMemo)

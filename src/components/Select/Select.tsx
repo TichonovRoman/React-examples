@@ -1,7 +1,6 @@
 import React, {KeyboardEventHandler, useState} from "react";
 import styles from "./Select.module.css"
 
-
 type ItemType = {
     title: string,
     value: any
@@ -13,8 +12,10 @@ type SelectPropsType = {
     items: ItemType[]
 }
 
+export const Select = React.memo(SelectForMemo)
 
-export function Select(props: SelectPropsType) {
+
+function SelectForMemo(props: SelectPropsType) {
     const selectedItem = props.items.find(i => i.value === props.value)
     const [active, setActive] = useState(false)
     const [hoveredElementValue, setHoveredElementValue] = useState(props.value)
