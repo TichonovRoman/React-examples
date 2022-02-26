@@ -24,10 +24,11 @@ export const Example1 = () => {
     const addUser = () =>{
         setUsers( [...users, "Alina" + new Date().getTime()])
     }
+    const setCounterHandler = () => counter+1
 
     return (
         <>
-            <button onClick={()=>setCounter(counter+1)}>+</button>
+            <button onClick={setCounterHandler}>+</button>
             <button onClick={addUser}>add user</button>
             <NewMessagesCounter count = {counter}/>
             <Users users={users}/>

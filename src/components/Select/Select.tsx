@@ -1,9 +1,10 @@
 import React, {KeyboardEventHandler, useState} from "react";
 import styles from "./Select.module.css"
 
-type ItemType = {
+export type ItemType = {
     title: string,
-    value: any
+    value: string,
+    // country?: number
 }
 
 type SelectPropsType = {
