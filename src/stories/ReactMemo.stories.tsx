@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useCallback, useState} from "react";
 
 export default {
     title: "React.memo demo",
@@ -21,9 +21,14 @@ export const Example1 = () => {
     const [counter, setCounter] = useState(0)
     const [users, setUsers] = useState(["Dimych", "Valera", "Artem"])
 
-    const addUser = () =>{
+    const addUser = useCallback (() =>{
         setUsers( [...users, "Alina" + new Date().getTime()])
-    }
+    }, [users])
+
+
+
+
+
     const setCounterHandler = () => counter+1
 
     return (
