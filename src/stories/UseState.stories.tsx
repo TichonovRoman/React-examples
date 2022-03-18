@@ -49,24 +49,26 @@ export const SetTimeoutExample = () => {
 
     const changeCount = (state: number) => state + 1
 
-    const [hours, setHours] = useState(0)
-    const [minuts, setMinuts] = useState(0)
-    const [seconds, setSeconds] = useState(0)
+    const [a, setA] = useState(new Date())
+
 
     useEffect(()=>{
-        setInterval(() => {
-            let a = new Date()
-            setHours(a.getHours())
-            setMinuts(a.getMinutes())
-            setSeconds(a.getSeconds())
-           setCounter((state) => state + 1)
+        const a = setInterval(() => {
+            setA(new Date())
+                       setCounter((state) => state + 1)
         }, 1000)
+
+        return () => {
+            clearInterval(a)
+        }
+
+
     }, [])
 
 
 
     return <>
     <button onClick={()=>setCounter(changeCount)}>+</button>
-        {hours}:{minuts}:{seconds}
+        {a.getHours()}:{a.getMinutes()}:{a.getSeconds()}
     </>
 }
